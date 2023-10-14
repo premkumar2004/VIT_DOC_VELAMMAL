@@ -574,10 +574,9 @@ app.post('/register', async (req, res,next) => {
 await newLogin.save();
 
 
-const textToDisplay = "You are registred";
+const textToDisplay = "You are registred ";
 await res.render('reg', {textToDisplay});
-    req.url = '/';
-   next();
+    await res.redirect('/');
 
 
 
