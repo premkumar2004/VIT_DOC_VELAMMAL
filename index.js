@@ -576,7 +576,7 @@ await newLogin.save();
 
 const textToDisplay = "You are registred ";
 await res.render('reg', {textToDisplay});
-    await res.redirect('/');
+
 
 
 
