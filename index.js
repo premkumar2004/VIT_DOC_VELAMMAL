@@ -462,18 +462,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/register', async (req, res) => {
-  
-  try {
-    const textToDisplay = "";
-   await res.render('reg', {textToDisplay});
-    
-    
-    
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch data' });
-  }
-});
+
 app.get('/submit', (req, res) => {
   res.sendFile(__dirname + '/submit.html');
 });
@@ -570,7 +559,7 @@ app.get('/register', async (req, res) => {
   }
 });
 
-app.post('/register', async (req, res) => {
+app.post('/register', async (req, res,next) => {
   try{
  const username=req.body.Username
  const email=req.body.Email
