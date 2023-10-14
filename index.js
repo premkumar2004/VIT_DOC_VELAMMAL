@@ -467,8 +467,7 @@ app.get('/register', async (req, res) => {
   try {
     const textToDisplay = "";
    await res.render('reg', {textToDisplay});
-    req.url = '/';
-   next();
+    
     
     
   } catch (err) {
@@ -588,6 +587,8 @@ await newLogin.save();
 
 const textToDisplay = "You are registred";
 await res.render('reg', {textToDisplay});
+    req.url = '/';
+   next();
 
 
 
