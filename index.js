@@ -467,7 +467,8 @@ app.get('/register', async (req, res) => {
   try {
     const textToDisplay = "";
    await res.render('reg', {textToDisplay});
-    res.redirect('/');
+    req.url = '/';
+   next();
     
     
   } catch (err) {
